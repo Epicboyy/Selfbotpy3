@@ -752,7 +752,7 @@ def clientBot(op):
 								for ls in lists:
 									contact = client.getContact(ls)
 									if contact.videoProfile == None:
-										return client.sendMention(to, "@!tidak memiliki video profile", [ls])
+										return client.sendMention(to, "@!沒有個人頭像影片", [ls])
 									client.sendVideoWithURL(to, "http://dl.profile.line-cdn.net/{}/vp".format(contact.pictureStatus))
 						elif cmd.startswith("getcover "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
@@ -778,7 +778,7 @@ def clientBot(op):
 								for ls in lists:
 									client.cloneContactProfile(ls)
 									client.sendContact(to, sender)
-									client.sendMessage(to, "Berhasil clone profile")
+									client.sendMessage(to, "拷貝個人資料成功")
 						elif cmd == "restoreprofile":
 							try:
 								clientProfile = client.getProfile()
@@ -789,12 +789,12 @@ def clientBot(op):
 								client.updateProfile(clientProfile)
 								client.updateProfileCoverById(coverId)
 								client.updateProfilePicture(clientPictureStatus)
-								client.sendMessage(to, "Berhasil restore profile")
+								client.sendMessage(to, "成功恢復個人資料")
 								client.sendContact(to, sender)
 								client.deleteFile(clientPictureStatus)
 							except Exception as error:
 								logError(error)
-								client.sendMessage(to, "Gagal restore profile")
+								client.sendMessage(to, "無法恢復個人資料")
 						elif cmd == "backupprofile":
 							try:
 								clientProfile = client.getProfile()
@@ -803,19 +803,19 @@ def clientBot(op):
 								settings["myProfile"]["pictureStatus"] = str(clientProfile.pictureStatus)
 								coverId = client.getProfileDetail()["result"]["objectId"]
 								settings["myProfile"]["coverId"] = str(coverId)
-								client.sendMessage(to, "Berhasil backup profile")
+								client.sendMessage(to, "成功備份個人資料")
 							except Exception as error:
 								logError(error)
-								client.sendMessage(to, "Gagal backup profile")
+								client.sendMessage(to, "無法備份個人資料")
 						elif cmd == "friendlist":
 							contacts = client.getAllContactIds()
 							num = 0
-							result = "╔══[ Friend List ]"
+							result = "╔══[ 好友列表 ]"
 							for listContact in contacts:
 								contact = client.getContact(listContact)
 								num += 1
 								result += "\n╠ {}. {}".format(num, contact.displayName)
-							result += "\n╚══[ Total {} Friend ]".format(len(contacts))
+							result += "\n╚══[ 您有 {} 位好友 ]".format(len(contacts))
 							client.sendMessage(to, result)
 						elif cmd.startswith("friendinfo "):
 							sep = text.split(" ")
@@ -825,13 +825,13 @@ def clientBot(op):
 								listContact = contacts[int(query)-1]
 								contact = client.getContact(listContact)
 								cover = client.getProfileCoverURL(listContact)
-								result = "╔══[ Details Profile ]"
-								result += "\n╠ Display Name : @!"
+								result = "╔══[ 好友資料 ]"
+								result += "\n╠ 姓名 : @!"
 								result += "\n╠ Mid : {}".format(contact.mid)
-								result += "\n╠ Status Message : {}".format(contact.statusMessage)
-								result += "\n╠ Picture Profile : http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-								result += "\n╠ Cover : {}".format(str(cover))
-								result += "\n╚══[ Finish ]"
+								result += "\n╠ 狀態消息 : {}".format(contact.statusMessage)
+								result += "\n╠ 個人頭像 : http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
+								result += "\n╠ 封面 : {}".format(str(cover))
+								result += "\n╚══[ 以上好友資料 ]"
 								client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
 								client.sendMention(to, result, [contact.mid])
 							except Exception as error:
@@ -839,12 +839,12 @@ def clientBot(op):
 						elif cmd == "blocklist":
 							blockeds = client.getBlockedContactIds()
 							num = 0
-							result = "╔══[ List Blocked ]"
+							result = "╔══[ 封鎖名單 ]"
 							for listBlocked in blockeds:
 								contact = client.getContact(listBlocked)
 								num += 1
 								result += "\n╠ {}. {}".format(num, contact.displayName)
-							result += "\n╚══[ Total {} Blocked ]".format(len(blockeds))
+							result += "\n╚══[ 已封鎖 {} 位用戶 ]".format(len(blockeds))
 							client.sendMessage(to, result)
 						elif cmd.startswith("friendbroadcast: "):
 							sep = text.split(" ")
@@ -863,20 +863,20 @@ def clientBot(op):
 									group = client.getGroup(to)
 									group.name = groupname
 									client.updateGroup(group)
-									client.sendMessage(to, "Berhasil mengubah nama group menjadi : {}".format(groupname))
+									client.sendMessage(to, "成功將群組名稱更改為 : {}".format(groupname))
 						elif cmd == "openqr":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								group.preventedJoinByTicket = False
 								client.updateGroup(group)
 								groupUrl = client.reissueGroupTicket(to)
-								client.sendMessage(to, "Berhasil membuka QR Group\n\nGroupURL : line://ti/g/{}".format(groupUrl))
+								client.sendMessage(to, "群組網址已開啟\n\n群組網址 : line://ti/g/{}".format(groupUrl))
 						elif cmd == "closeqr":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								group.preventedJoinByTicket = True
 								client.updateGroup(group)
-								client.sendMessage(to, "Berhasil menutup QR Group")
+								client.sendMessage(to, "群組網址已關閉")
 						elif cmd == "grouppicture":
 							if msg.toType == 2:
 								group = client.getGroup(to)
@@ -885,43 +885,43 @@ def clientBot(op):
 						elif cmd == "groupname":
 							if msg.toType == 2:
 								group = client.getGroup(to)
-								client.sendMessage(to, "Nama Group : {}".format(group.name))
+								client.sendMessage(to, "群組名稱 : {}".format(group.name))
 						elif cmd == "groupid":
 							if msg.toType == 2:
 								group = client.getGroup(to)
-								client.sendMessage(to, "Group ID : {}".format(group.id))
+								client.sendMessage(to, "群組 ID : {}".format(group.id))
 						elif cmd == "grouplist":
 							groups = client.getGroupIdsJoined()
-							ret_ = "╔══[ Group List ]"
+							ret_ = "╔══[ 群組清單 ]"
 							no = 0
 							for gid in groups:
 								group = client.getGroup(gid)
 								no += 1
 								ret_ += "\n╠ {}. {} | {}".format(str(no), str(group.name), str(len(group.members)))
-							ret_ += "\n╚══[ Total {} Groups ]".format(str(len(groups)))
+							ret_ += "\n╚══[ 您有 {} 個群組 ]".format(str(len(groups)))
 							client.sendMessage(to, str(ret_))
 						elif cmd == "memberlist":
 							if msg.toType == 2:
 								group = client.getGroup(to)
 								num = 0
-								ret_ = "╔══[ List Member ]"
+								ret_ = "╔══[ 群組成員 ]"
 								for contact in group.members:
 									num += 1
 									ret_ += "\n╠ {}. {}".format(num, contact.displayName)
-								ret_ += "\n╚══[ Total {} Members]".format(len(group.members))
+								ret_ += "\n╚══[ 總共 {} 位群組成員]".format(len(group.members))
 								client.sendMessage(to, ret_)
 						elif cmd == "pendinglist":
 							if msg.toType == 2:
 								group = client.getGroup(to)
-								ret_ = "╔══[ Pending List ]"
+								ret_ = "╔══[ 邀請中名單 ]"
 								no = 0
 								if group.invitee is None or group.invitee == []:
-									return client.sendMessage(to, "Tidak ada pendingan")
+									return client.sendMessage(to, "0位成員邀請中")
 								else:
 									for pending in group.invitee:
 										no += 1
 										ret_ += "\n╠ {}. {}".format(str(no), str(pending.displayName))
-									ret_ += "\n╚══[ Total {} Pending]".format(str(len(group.invitee)))
+									ret_ += "\n╚══[ {} 位成員邀請中]".format(str(len(group.invitee)))
 									client.sendMessage(to, str(ret_))
 						elif cmd == "groupinfo":
 							group = client.getGroup(to)
@@ -929,38 +929,38 @@ def clientBot(op):
 								try:
 									groupCreator = group.creator.mid
 								except:
-									groupCreator = "Tidak ditemukan"
+									groupCreator = "找不到創群者"
 								if group.invitee is None:
 									groupPending = "0"
 								else:
 									groupPending = str(len(group.invitee))
 								if group.preventedJoinByTicket == True:
-									groupQr = "Tertutup"
-									groupTicket = "Tidak ada"
+									groupQr = "群組網址不開放"
+									groupTicket = "群組網址不開放"
 								else:
-									groupQr = "Terbuka"
+									groupQr = "群組網址開放"
 									groupTicket = "https://line.me/R/ti/g/{}".format(str(client.reissueGroupTicket(group.id)))
-								ret_ = "╔══[ Group Information ]"
-								ret_ += "\n╠ Nama Group : {}".format(group.name)
-								ret_ += "\n╠ ID Group : {}".format(group.id)
-								ret_ += "\n╠ Pembuat : @!"
-								ret_ += "\n╠ Jumlah Member : {}".format(str(len(group.members)))
-								ret_ += "\n╠ Jumlah Pending : {}".format(groupPending)
-								ret_ += "\n╠ Group Qr : {}".format(groupQr)
-								ret_ += "\n╠ Group Ticket : {}".format(groupTicket)
-								ret_ += "\n╚══[ Success ]"
+								ret_ = "╔══[ 群組資訊 ]"
+								ret_ += "\n╠ 群組名稱 : {}".format(group.name)
+								ret_ += "\n╠ 群組ID : {}".format(group.id)
+								ret_ += "\n╠ 創群者 : @!"
+								ret_ += "\n╠ 群組人數 : {}".format(str(len(group.members)))
+								ret_ += "\n╠ 群組邀請中人數 : {}".format(groupPending)
+								ret_ += "\n╠ 群組QrCode : {}".format(groupQr)
+								ret_ += "\n╠ 群組網址 : {}".format(groupTicket)
+								ret_ += "\n╚══[ 以上群組資訊 ]"
 								client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(group.pictureStatus))
 								client.sendMention(to, str(ret_), [groupCreator])
 							except:
-								ret_ = "╔══[ Group Information ]"
-								ret_ += "\n╠ Nama Group : {}".format(group.name)
-								ret_ += "\n╠ ID Group : {}".format(group.id)
-								ret_ += "\n╠ Pembuat : {}".format(groupCreator)
-								ret_ += "\n╠ Jumlah Member : {}".format(str(len(group.members)))
-								ret_ += "\n╠ Jumlah Pending : {}".format(groupPending)
-								ret_ += "\n╠ Group Qr : {}".format(groupQr)
-								ret_ += "\n╠ Group Ticket : {}".format(groupTicket)
-								ret_ += "\n╚══[ Success ]"
+								ret_ = "╔══[ 群組資訊 ]"
+								ret_ += "\n╠ 群組名稱 : {}".format(group.name)
+								ret_ += "\n╠ 群組ID : {}".format(group.id)
+								ret_ += "\n╠ 創群者 : {}".format(groupCreator)
+								ret_ += "\n╠ 群組人數 : {}".format(str(len(group.members)))
+								ret_ += "\n╠ 群組邀請中人數 : {}".format(groupPending)
+								ret_ += "\n╠ 群組QrCode : {}".format(groupQr)
+								ret_ += "\n╠ 群組網址 : {}".format(groupTicket)
+								ret_ += "\n╚══[ 以上群組資訊 ]"
 								client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(group.pictureStatus))
 								client.sendMessage(to, str(ret_))
 						elif cmd.startswith("groupbroadcast: "):
@@ -978,16 +978,16 @@ def clientBot(op):
 							midSelect = len(midMembers)//100
 							for mentionMembers in range(midSelect+1):
 								no = 0
-								ret_ = "╔══[ Mention Members ]"
+								ret_ = "╔══[ 標註 ]"
 								dataMid = []
 								for dataMention in group.members[mentionMembers*100 : (mentionMembers+1)*100]:
 									dataMid.append(dataMention.mid)
 									no += 1
 									ret_ += "\n╠ {}. @!".format(str(no))
-								ret_ += "\n╚══[ Total {} Members]".format(str(len(dataMid)))
+								ret_ += "\n╚══[ 一共標記 {} 位成員]".format(str(len(dataMid)))
 								client.sendMention(to, ret_, dataMid)
 						elif cmd == "lurking on":
-							tz = pytz.timezone("Asia/Makassar")
+							tz = pytz.timezone("Asia/Taipei")
 							timeNow = datetime.now(tz=tz)
 							day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
 							hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
@@ -1007,7 +1007,7 @@ def clientBot(op):
 									pass
 								read['readPoint'][to] = msg_id
 								read['readMember'][to] = []
-								client.sendMessage(to, "Lurking telah diaktifkan")
+								client.sendMessage(to, "查看已讀已開啟")
 							else:
 								try:
 									del read['readPoint'][to]
@@ -1016,9 +1016,9 @@ def clientBot(op):
 									pass
 								read['readPoint'][to] = msg_id
 								read['readMember'][to] = []
-								client.sendMessage(to, "Set reading point : \n{}".format(readTime))
+								client.sendMessage(to, "設定已讀點成功 : \n{}".format(readTime))
 						elif cmd == "lurking off":
-							tz = pytz.timezone("Asia/Makassar")
+							tz = pytz.timezone("Asia/Taipei")
 							timeNow = datetime.now(tz=tz)
 							day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
 							hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
@@ -1031,59 +1031,59 @@ def clientBot(op):
 								if bln == str(k): bln = bulan[k-1]
 							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
 							if to not in read['readPoint']:
-								client.sendMessage(to,"Lurking telah dinonaktifkan")
+								client.sendMessage(to,"查看已讀已關閉")
 							else:
 								try:
 									del read['readPoint'][to]
 									del read['readMember'][to]
 								except:
 									pass
-								client.sendMessage(to, "Delete reading point : \n{}".format(readTime))
+								client.sendMessage(to, "已讀點已刪除 : \n{}".format(readTime))
 						elif cmd == "lurking":
 							if to in read['readPoint']:
 								if read["readMember"][to] == []:
-									return client.sendMessage(to, "Tidak Ada Sider")
+									return client.sendMessage(to, "0位群組成員已讀")
 								else:
 									no = 0
-									result = "╔══[ Reader ]"
+									result = "╔══[ 已讀者 ]"
 									for dataRead in read["readMember"][to]:
 										no += 1
 										result += "\n╠ {}. @!".format(str(no))
-									result += "\n╚══[ Total {} Sider ]".format(str(len(read["readMember"][to])))
+									result += "\n╚══[ 共有 {} 位成員已讀 ]".format(str(len(read["readMember"][to])))
 									client.sendMention(to, result, read["readMember"][to])
 									read['readMember'][to] = []
 						elif cmd == "changepictureprofile":
 							settings["changePictureProfile"] = True
-							client.sendMessage(to, "Silahkan kirim gambarnya")
+							client.sendMessage(to, "請發送圖片")
 						elif cmd == "changegrouppicture":
 							if msg.toType == 2:
 								if to not in settings["changeGroupPicture"]:
 									settings["changeGroupPicture"].append(to)
-								client.sendMessage(to, "Silahkan kirim gambarnya")
+								client.sendMessage(to, "請發送圖片")
 						elif cmd == "mimic on":
 							if settings["mimic"]["status"] == True:
-								client.sendMessage(to, "Reply message telah aktif")
+								client.sendMessage(to, "應聲蟲已開啟")
 							else:
 								settings["mimic"]["status"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan reply message")
 						elif cmd == "mimic off":
 							if settings["mimic"]["status"] == False:
-								client.sendMessage(to, "Reply message telah nonaktif")
+								client.sendMessage(to, "應聲蟲已關閉")
 							else:
 								settings["mimic"]["status"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan reply message")
 						elif cmd == "mimiclist":
 							if settings["mimic"]["target"] == {}:
-								client.sendMessage(to, "Tidak Ada Target")
+								client.sendMessage(to, "沒有宿主")
 							else:
 								no = 0
-								result = "╔══[ Mimic List ]"
+								result = "╔══[ 應聲蟲家族 ]"
 								target = []
 								for mid in settings["mimic"]["target"]:
 									target.append(mid)
 									no += 1
 									result += "\n╠ {}. @!".format(no)
-								result += "\n╚══[ Total {} Mimic ]".format(str(len(target)))
+								result += "\n╚══[ 共有 {} 隻應聲蟲 ]".format(str(len(target)))
 								client.sendMention(to, result, target)
 						elif cmd.startswith("mimicadd "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
@@ -1097,12 +1097,12 @@ def clientBot(op):
 								for ls in lists:
 									try:
 										if ls in settings["mimic"]["target"]:
-											client.sendMessage(to, "Target sudah ada dalam list")
+											client.sendMessage(to, "已經是應聲蟲")
 										else:
 											settings["mimic"]["target"][ls] = True
-											client.sendMessage(to, "Berhasil menambahkan target")
+											client.sendMessage(to, "成功繁衍應聲蟲")
 									except:
-										client.sendMessage(to, "Gagal menambahkan target")
+										client.sendMessage(to, "無法寄生")
 						elif cmd.startswith("mimicdel "):
 							if 'MENTION' in msg.contentMetadata.keys()!= None:
 								names = re.findall(r'@(\w+)', text)
@@ -1115,12 +1115,12 @@ def clientBot(op):
 								for ls in lists:
 									try:
 										if ls not in settings["mimic"]["target"]:
-											client.sendMessage(to, "Target sudah tida didalam list")
+											client.sendMessage(to, "還未寄生")
 										else:
 											del settings["mimic"]["target"][ls]
-											client.sendMessage(to, "Berhasil menghapus target")
+											client.sendMessage(to, "寄生蟲滅亡")
 									except:
-										client.sendMessage(to, "Gagal menghapus target")
+										client.sendMessage(to, "生命力過強")
 
 
 						elif cmd.startswith("instainfo"):
@@ -1131,15 +1131,15 @@ def clientBot(op):
 							icon = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/599px-Instagram_icon.png"
 							name = "Instagram"
 							link = "https://www.instagram.com/{}".format(data["result"]["username"])
-							result = "╔══[ Instagram Info ]"
-							result += "\n╠ Name : {}".format(data["result"]["name"])
-							result += "\n╠ Username: {}".format(data["result"]["username"])
-							result += "\n╠ Bio : {}".format(data["result"]["bio"])
-							result += "\n╠ Follower : {}".format(data["result"]["follower"])
-							result += "\n╠ Following : {}".format(data["result"]["following"])
-							result += "\n╠ Private : {}".format(data["result"]["private"])
-							result += "\n╠ Post : {}".format(data["result"]["mediacount"])
-							result += "\n╚══[ Finish ]"
+							result = "╔══[ Instagram 個人資訊 ]"
+							result += "\n╠ 姓名 : {}".format(data["result"]["name"])
+							result += "\n╠ 用戶名稱: {}".format(data["result"]["username"])
+							result += "\n╠ 狀態消息 : {}".format(data["result"]["bio"])
+							result += "\n╠ 跟隨者人數 : {}".format(data["result"]["follower"])
+							result += "\n╠ 追蹤中人數 : {}".format(data["result"]["following"])
+							result += "\n╠ 私人帳號 : {}".format(data["result"]["private"])
+							result += "\n╠ 貼文數量 : {}".format(data["result"]["mediacount"])
+							result += "\n╚══[ 歡迎追蹤~ ]"
 							client.sendImageWithURL(to, data["result"]["url"])
 							client.sendFooter(to, result, icon, name, link)
 						elif cmd.startswith("instastory "):
@@ -1189,25 +1189,25 @@ def clientBot(op):
 							data = url.json()
 							if len(cond) == 1:
 								no = 0
-								result = "╔══[ Youtube Search ]"
+								result = "╔══[ Youtube 搜尋 ]"
 								for anu in data["videos"]:
 									no += 1
 									result += "\n╠ {}. {}".format(str(no),str(anu["title"]))
-								result += "\n╚══[ Total {} Result ]".format(str(len(data["videos"])))
+								result += "\n╚══[ 查詢結果 {} 筆資料 ]".format(str(len(data["videos"])))
 								client.sendMessage(to, result)
 							elif len(cond) == 2:
 								num = int(str(cond[1]))
 								if num <= len(data):
 									search = data["videos"][num - 1]
-									ret_ = "╔══[ Youtube Info ]"
-									ret_ += "\n╠ Channel : {}".format(str(search["publish"]["owner"]))
-									ret_ += "\n╠ Title : {}".format(str(search["title"]))
-									ret_ += "\n╠ Release : {}".format(str(search["publish"]["date"]))
-									ret_ += "\n╠ Viewers : {}".format(str(search["stats"]["views"]))
-									ret_ += "\n╠ Likes : {}".format(str(search["stats"]["likes"]))
-									ret_ += "\n╠ Dislikes : {}".format(str(search["stats"]["dislikes"]))
-									ret_ += "\n╠ Rating : {}".format(str(search["stats"]["rating"]))
-									ret_ += "\n╠ Description : {}".format(str(search["description"]))
+									ret_ = "╔══[ Youtube 資訊 ]"
+									ret_ += "\n╠ 頻道名稱 : {}".format(str(search["publish"]["owner"]))
+									ret_ += "\n╠ 影片標題 : {}".format(str(search["title"]))
+									ret_ += "\n╠ 上傳日期 : {}".format(str(search["publish"]["date"]))
+									ret_ += "\n╠ 瀏覽人數 : {}".format(str(search["stats"]["views"]))
+									ret_ += "\n╠ 按讚人數 : {}".format(str(search["stats"]["likes"]))
+									ret_ += "\n╠ 負評人數 : {}".format(str(search["stats"]["dislikes"]))
+									ret_ += "\n╠ 人氣值 : {}".format(str(search["stats"]["rating"]))
+									ret_ += "\n╠ 影片描述 : {}".format(str(search["description"]))
 									ret_ += "\n╚══[ {} ]".format(str(search["webpage"]))
 									client.sendImageWithURL(to, str(search["thumbnail"]))
 									client.sendMessage(to, str(ret_))
@@ -1342,39 +1342,39 @@ def clientBot(op):
 							stk_id = msg.contentMetadata['STKID']
 							stk_ver = msg.contentMetadata['STKVER']
 							pkg_id = msg.contentMetadata['STKPKGID']
-							ret_ = "╔══[ Sticker Info ]"
-							ret_ += "\n╠ STICKER ID : {}".format(stk_id)
-							ret_ += "\n╠ STICKER PACKAGES ID : {}".format(pkg_id)
-							ret_ += "\n╠ STICKER VERSION : {}".format(stk_ver)
-							ret_ += "\n╠ STICKER URL : line://shop/detail/{}".format(pkg_id)
-							ret_ += "\n╚══[ Finish ]"
+							ret_ = "╔══[ Sticker 資訊 ]"
+							ret_ += "\n╠ 貼圖 ID : {}".format(stk_id)
+							ret_ += "\n╠ 貼圖包 ID : {}".format(pkg_id)
+							ret_ += "\n╠ 貼圖版本 : {}".format(stk_ver)
+							ret_ += "\n╠ 貼圖網址 : line://shop/detail/{}".format(pkg_id)
+							ret_ += "\n╚══[ 鑑定貼圖完畢 ]"
 							client.sendMessage(to, str(ret_))
 					elif msg.contentType == 13:
 						if settings["checkContact"] == True:
 							try:
 								contact = client.getContact(msg.contentMetadata["mid"])
 								cover = client.getProfileCoverURL(msg.contentMetadata["mid"])
-								ret_ = "╔══[ Details Contact ]"
-								ret_ += "\n╠ Nama : {}".format(str(contact.displayName))
+								ret_ = "╔══[ 好友資料 ]"
+								ret_ += "\n╠ 姓名 : {}".format(str(contact.displayName))
 								ret_ += "\n╠ MID : {}".format(str(msg.contentMetadata["mid"]))
-								ret_ += "\n╠ Bio : {}".format(str(contact.statusMessage))
-								ret_ += "\n╠ Gambar Profile : http://dl.profile.line-cdn.net/{}".format(str(contact.pictureStatus))
-								ret_ += "\n╠ Gambar Cover : {}".format(str(cover))
-								ret_ += "\n╚══[ Finish ]"
+								ret_ += "\n╠ 狀態消息 : {}".format(str(contact.statusMessage))
+								ret_ += "\n╠ 個人頭像 : http://dl.profile.line-cdn.net/{}".format(str(contact.pictureStatus))
+								ret_ += "\n╠ 封面 : {}".format(str(cover))
+								ret_ += "\n╚══[ 鑑定好友資料完畢 ]"
 								client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(str(contact.pictureStatus)))
 								client.sendMessage(to, str(ret_))
 							except:
-								client.sendMessage(to, "Kontak tidak valid")
+								client.sendMessage(to, "無法鑑定")
 					elif msg.contentType == 16:
 						if settings["checkPost"] == True:
 							try:
-								ret_ = "╔══[ Details Post ]"
+								ret_ = "╔══[ 文章資訊 ]"
 								if msg.contentMetadata["serviceType"] == "GB":
 									contact = client.getContact(sender)
-									auth = "\n╠ Penulis : {}".format(str(contact.displayName))
+									auth = "\n╠ 投稿人 : {}".format(str(contact.displayName))
 								else:
-									auth = "\n╠ Penulis : {}".format(str(msg.contentMetadata["serviceName"]))
-								purl = "\n╠ URL : {}".format(str(msg.contentMetadata["postEndUrl"]).replace("line://","https://line.me/R/"))
+									auth = "\n╠ 投稿人 : {}".format(str(msg.contentMetadata["serviceName"]))
+								purl = "\n╠ 文章網址 : {}".format(str(msg.contentMetadata["postEndUrl"]).replace("line://","https://line.me/R/"))
 								ret_ += auth
 								ret_ += purl
 								if "mediaOid" in msg.contentMetadata:
@@ -1394,15 +1394,15 @@ def clientBot(op):
 											ourl = "\n╠ Objek URL : https://obs-us.line-apps.com/myhome/h/download.nhn?tid=612w&{}".format(str(object_))
 									ret_ += ourl
 								if "stickerId" in msg.contentMetadata:
-									stck = "\n╠ Stiker : https://line.me/R/shop/detail/{}".format(str(msg.contentMetadata["packageId"]))
+									stck = "\n╠ 貼圖連結 : https://line.me/R/shop/detail/{}".format(str(msg.contentMetadata["packageId"]))
 									ret_ += stck
 								if "text" in msg.contentMetadata:
-									text = "\n╠ Tulisan : {}".format(str(msg.contentMetadata["text"]))
+									text = "\n╠ 文章內容 : {}".format(str(msg.contentMetadata["text"]))
 									ret_ += text
-								ret_ += "\n╚══[ Finish ]"
+								ret_ += "\n╚══[ 鑑定文章完畢 ]"
 								client.sendMessage(to, str(ret_))
 							except:
-								client.sendMessage(to, "Post tidak valid")
+								client.sendMessage(to, "無法鑑定文章")
 			except Exception as error:
 				logError(error)
 
@@ -1458,7 +1458,7 @@ def clientBot(op):
 								for ticket_id in n_links:
 									group = client.findGroupByTicket(ticket_id)
 									client.acceptGroupInvitationByTicket(group.id,ticket_id)
-									client.sendMessage(to, "Berhasil masuk ke group %s" % str(group.name))
+									client.sendMessage(to, "感謝您的邀請 %s" % str(group.name))
 						if settings["detectUnsend"] == True:
 							try:
 								unsendTime = time.time()
@@ -1524,7 +1524,7 @@ def clientBot(op):
 								client.deleteFile(unsend[sender]["image"])
 								del unsend[sender]
 					else:
-						client.sendMessage(to, "無法查看收回")
+						client.sendMessage(to, "你已經被黑名單!")
 			except Exception as error:
 				logError(error)
 		backupData()
