@@ -152,31 +152,31 @@ def menuHelp():
                 "┃🔧┃ " + key + "SetAutoAddMessage: 「text」" + "\n" + \
                 "┃🔧┃ " + key + "SetAutoResponMessage: 「text」" + "\n" + \
                 "┃🔧┃ " + key + "SetAutoJoinMessage: 「Text」" + "\n" + \
-		"┃🇮🇩┃━━♥〔 Self Command 〕♥━━" + "\n" + \
-                "┃🇮🇩┃ " + key + "ChangeName: 「Text」" + "\n" + \
-                "┃🇮🇩┃ " + key + "ChangeBio: 「Text」" + "\n" + \
-                "┃🇮🇩┃ " + key + "Me" + "\n" + \
-                "┃🇮🇩┃ " + key + "MyMid" + "\n" + \
-                "┃🇮🇩┃ " + key + "MyName" + "\n" + \
-                "┃🇮🇩┃ " + key + "MyBio" + "\n" + \
-                "┃🇮🇩┃ " + key + "MyPicture" + "\n" + \
-                "┃🇮🇩┃ " + key + "MyVideoProfile" + "\n" + \
-                "┃🇮🇩┃ " + key + "MyCover" + "\n" + \
-                "┃🇮🇩┃ " + key + "MyProfile" + "\n" + \
-                "┃🇮🇩┃ " + key + "GetMid @Mention" + "\n" + \
-                "┣🇮🇩┫ " + key + "GetName @Mention" + "\n" + \
-                "┃🇮🇩┃ " + key + "GetBio @Mention" + "\n" + \
-                "┃🇮🇩┃ " + key + "GetPicture @Mention" + "\n" + \
-                "┃🇮🇩┃ " + key + "GetVideoProfile @Mention" + "\n" + \
-                "┃🇮🇩┃ " + key + "GetCover @Mention" + "\n" + \
-                "┃🇮🇩┃ " + key + "CloneProfile @Mention" + "\n" + \
-                "┃🇮🇩┃ " + key + "RestoreProfile" + "\n" + \
-                "┃🇮🇩┃ " + key + "BackupProfile" + "\n" + \
-                "┃🇮🇩┃ " + key + "FriendList" + "\n" + \
-                "┃🇮🇩┃ " + key + "FriendInfo 「Number」" + "\n" + \
-                "┃🇮🇩┃ " + key + "BlockList" + "\n" + \
-                "┃🇮🇩┃ " + key + "FriendBroadcast" + "\n" + \
-                "┃🇮🇩┃ " + key + "ChangePictureProfile" + "\n" + \
+		"┃🌈┃━━♥〔 Self Command 〕♥━━" + "\n" + \
+                "┃🌈┃ " + key + "ChangeName: 「Text」" + "\n" + \
+                "┃🌈┃ " + key + "ChangeBio: 「Text」" + "\n" + \
+                "┃🌈┃ " + key + "Me" + "\n" + \
+                "┃🌈┃ " + key + "MyMid" + "\n" + \
+                "┃🌈┃ " + key + "MyName" + "\n" + \
+                "┃🌈┃ " + key + "MyBio" + "\n" + \
+                "┃🌈┃ " + key + "MyPicture" + "\n" + \
+                "┃🌈┃ " + key + "MyVideoProfile" + "\n" + \
+                "┃🌈┃ " + key + "MyCover" + "\n" + \
+                "┃🌈┃ " + key + "MyProfile" + "\n" + \
+                "┃🌈┃ " + key + "GetMid @Mention" + "\n" + \
+                "┣🌈┫ " + key + "GetName @Mention" + "\n" + \
+                "┃🌈┃ " + key + "GetBio @Mention" + "\n" + \
+                "┃🌈┃ " + key + "GetPicture @Mention" + "\n" + \
+                "┃🌈┃ " + key + "GetVideoProfile @Mention" + "\n" + \
+                "┃🌈┃ " + key + "GetCover @Mention" + "\n" + \
+                "┃🌈┃ " + key + "CloneProfile @Mention" + "\n" + \
+                "┃🌈┃ " + key + "RestoreProfile" + "\n" + \
+                "┃🌈┃ " + key + "BackupProfile" + "\n" + \
+                "┃🌈┃ " + key + "FriendList" + "\n" + \
+                "┃🌈┃ " + key + "FriendInfo 「Number」" + "\n" + \
+                "┃🌈┃ " + key + "BlockList" + "\n" + \
+                "┃🌈┃ " + key + "FriendBroadcast" + "\n" + \
+                "┃🌈┃ " + key + "ChangePictureProfile" + "\n" + \
 		"┃🛠┃━━🛠〔 Group Command 〕🛠━━" + "\n" + \
                 "┃🛠┃ " + key + "ChangeGroupName: 「Text」" + "\n" + \
                 "┃🛠┃ " + key + "GroupCreator" + "\n" + \
@@ -279,112 +279,112 @@ def menuTranslate():
 	else:
 		key = ''
 	menuTranslate =	"╭━━〔 T R A N S L A T E 〕" + "\n" + \
-                       "┃🇮🇩┃ af : afrikaans" + "\n" + \
-                       "┃🇮🇩┃ sq : albanian" + "\n" + \
-                       "┃🇮🇩┃ am : amharic" + "\n" + \
-                       "┃🇮🇩┃ ar : arabic" + "\n" + \
-                       "┃🇮🇩┃ hy : armenian" + "\n" + \
-                       "┃🇮🇩┃ az : azerbaijani" + "\n" + \
-                       "┃🇮🇩┃ eu : basque" + "\n" + \
-                       "┃🇮🇩┃ be : belarusian" + "\n" + \
-                       "┃🇮🇩┃ bn : bengali" + "\n" + \
-                       "┃🇮🇩┃ bs : bosnian" + "\n" + \
-                       "┃🇮🇩┃ bg : bulgarian" + "\n" + \
-                       "┃🇮🇩┃ ca : catalan" + "\n" + \
-                       "┃🇮🇩┃ ceb : cebuano" + "\n" + \
-                       "┃🇮🇩┃ ny : chichewa" + "\n" + \
-                       "┃🇮🇩┃ zh-cn : chinese (simplified)" + "\n" + \
-                       "┃🇮🇩┃ zh-tw : chinese (traditional)" + "\n" + \
-                       "┃🇮🇩┃ co : corsican" + "\n" + \
-                       "┃🇮🇩┃ hr : croatian" + "\n" + \
-                       "┃🇮🇩┃ cs : czech" + "\n" + \
-                       "┃🇮🇩┃ da : danish" + "\n" + \
-                       "┃🇮🇩┃ nl : dutch" + "\n" + \
-                       "┃🇮🇩┃ en : english" + "\n" + \
-                       "┃🇮🇩┃ eo : esperanto" + "\n" + \
-                       "┃🇮🇩┃ et : estonian" + "\n" + \
-                       "┃🇮🇩┃ tl : filipino" + "\n" + \
-                       "┃🇮🇩┃ fi : finnish" + "\n" + \
-                       "┃🇮🇩┃ fr : french" + "\n" + \
-                       "┃🇮🇩┃ fy : frisian" + "\n" + \
-                       "┃🇮🇩┃ gl : galician" + "\n" + \
-                       "┃🇮🇩┃ ka : georgian" + "\n" + \
-                       "┃🇮🇩┃ de : german" + "\n" + \
-                       "┃🇮🇩┃ el : greek" + "\n" + \
-                       "┃🇮🇩┃ gu : gujarati" + "\n" + \
-                       "┃🇮🇩┃ ht : haitian creole" + "\n" + \
-                       "┃🇮🇩┃ ha : hausa" + "\n" + \
-                       "┃🇮🇩┃ haw : hawaiian" + "\n" + \
-                       "┃🇮🇩┃ iw : hebrew" + "\n" + \
-                       "┃🇮🇩┃ hi : hindi" + "\n" + \
-                       "┃🇮🇩┃ hmn : hmong" + "\n" + \
-                       "┃🇮🇩┃ hu : hungarian" + "\n" + \
-                       "┃🇮🇩┃ is : icelandic" + "\n" + \
-                       "┃🇮🇩┃ ig : igbo" + "\n" + \
-                       "┃🇮🇩┃ id : indonesian" + "\n" + \
-                       "┃🇮🇩┃ ga : irish" + "\n" + \
-                       "┃🇮🇩┃ it : italian" + "\n" + \
-                       "┃🇮🇩┃ ja : japanese" + "\n" + \
-                       "┃🇮🇩┃ jw : javanese" + "\n" + \
-                       "┃🇮🇩┃ kn : kannada" + "\n" + \
-                       "┃🇮🇩┃ kk : kazakh" + "\n" + \
-                       "┃🇮🇩┃ km : khmer" + "\n" + \
-                       "┃🇮🇩┃ ko : korean" + "\n" + \
-                       "┃🇮🇩┃ ku : kurdish (kurmanji)" + "\n" + \
-                       "┃🇮🇩┃ ky : kyrgyz" + "\n" + \
-                       "┃🇮🇩┃ lo : lao" + "\n" + \
-                       "┃🇮🇩┃ la : latin" + "\n" + \
-                       "┃🇮🇩┃ lv : latvian" + "\n" + \
-                       "┃🇮🇩┃ lt : lithuanian" + "\n" + \
-                       "┃🇮🇩┃ lb : luxembourgish" + "\n" + \
-                       "┃🇮🇩┃ mk : macedonian" + "\n" + \
-                       "┃🇮🇩┃ mg : malagasy" + "\n" + \
-                       "┃🇮🇩┃ ms : malay" + "\n" + \
-                       "┃🇮🇩┃ ml : malayalam" + "\n" + \
-                       "┃🇮🇩┃ mt : maltese" + "\n" + \
-                       "┃🇮🇩┃ mi : maori" + "\n" + \
-                       "┃🇮🇩┃ mr : marathi" + "\n" + \
-                       "┃🇮🇩┃ mn : mongolian" + "\n" + \
-                       "┃🇮🇩┃ my : myanmar (burmese)" + "\n" + \
-                       "┃🇮🇩┃ ne : nepali" + "\n" + \
-                       "┃🇮🇩┃ no : norwegian" + "\n" + \
-                       "┃🇮🇩┃ ps : pashto" + "\n" + \
-                       "┃🇮🇩┃ fa : persian" + "\n" + \
-                       "┃🇮🇩┃ pl : polish" + "\n" + \
-                       "┃🇮🇩┃ pt : portuguese" + "\n" + \
-                       "┃🇮🇩┃ pa : punjabi" + "\n" + \
-                       "┃🇮🇩┃ ro : romanian" + "\n" + \
-                       "┃🇮🇩┃ ru : russian" + "\n" + \
-                       "┃🇮🇩┃ sm : samoan" + "\n" + \
-                       "┃🇮🇩┃ gd : scots gaelic" + "\n" + \
-                       "┃🇮🇩┃ sr : serbian" + "\n" + \
-                       "┃🇮🇩┃ st : sesotho" + "\n" + \
-                       "┃🇮🇩┃ sn : shona" + "\n" + \
-                       "┃🇮🇩┃ sd : sindhi" + "\n" + \
-                       "┃🇮🇩┃ si : sinhala" + "\n" + \
-                       "┃🇮🇩┃ sk : slovak" + "\n" + \
-                       "┃🇮🇩┃ sl : slovenian" + "\n" + \
-                       "┃🇮🇩┃ so : somali" + "\n" + \
-                       "┃🇮🇩┃ es : spanish" + "\n" + \
-                       "┃🇮🇩┃ su : sundanese" + "\n" + \
-                       "┃🇮🇩┃ sw : swahili" + "\n" + \
-                       "┃🇮🇩┃ sv : swedish" + "\n" + \
-                       "┃🇮🇩┃ tg : tajik" + "\n" + \
-                       "┃🇮🇩┃ ta : tamil" + "\n" + \
-                       "┃🇮🇩┃ te : telugu" + "\n" + \
-                       "┃🇮🇩┃ th : thai" + "\n" + \
-                       "┃🇮🇩┃ tr : turkish" + "\n" + \
-                       "┃🇮🇩┃ uk : ukrainian" + "\n" + \
-                       "┃🇮🇩┃ ur : urdu" + "\n" + \
-                       "┃🇮🇩┃ uz : uzbek" + "\n" + \
-                       "┃🇮🇩┃ vi : vietnamese" + "\n" + \
-                       "┃🇮🇩┃ cy : welsh" + "\n" + \
-                       "┃🇮🇩┃ xh : xhosa" + "\n" + \
-                       "┃🇮🇩┃ yi : yiddish" + "\n" + \
-                       "┃🇮🇩┃ yo : yoruba" + "\n" + \
-                       "┃🇮🇩┃ zu : zulu" + "\n" + \
-                       "┃🇮🇩┃ fil : Filipino" + "\n" + \
-                       "┃🇮🇩┃ he : Hebrew" + "\n" + \
+                       "┃✿┃ af : afrikaans" + "\n" + \
+                       "┃✿┃ sq : albanian" + "\n" + \
+                       "┃✿┃ am : amharic" + "\n" + \
+                       "┃✿┃ ar : arabic" + "\n" + \
+                       "┃✿┃ hy : armenian" + "\n" + \
+                       "┃✿┃ az : azerbaijani" + "\n" + \
+                       "┃✿┃ eu : basque" + "\n" + \
+                       "┃✿┃ be : belarusian" + "\n" + \
+                       "┃✿┃ bn : bengali" + "\n" + \
+                       "┃✿┃ bs : bosnian" + "\n" + \
+                       "┃✿┃ bg : bulgarian" + "\n" + \
+                       "┃✿┃ ca : catalan" + "\n" + \
+                       "┃✿┃ ceb : cebuano" + "\n" + \
+                       "┃✿┃ ny : chichewa" + "\n" + \
+                       "┃✿┃ zh-cn : chinese (simplified)" + "\n" + \
+                       "┃✿┃ zh-tw : chinese (traditional)" + "\n" + \
+                       "┃✿┃ co : corsican" + "\n" + \
+                       "┃✿┃ hr : croatian" + "\n" + \
+                       "┃✿┃ cs : czech" + "\n" + \
+                       "┃✿┃ da : danish" + "\n" + \
+                       "┃✿┃ nl : dutch" + "\n" + \
+                       "┃✿┃ en : english" + "\n" + \
+                       "┃✿┃ eo : esperanto" + "\n" + \
+                       "┃✿┃ et : estonian" + "\n" + \
+                       "┃✿┃ tl : filipino" + "\n" + \
+                       "┃✿┃ fi : finnish" + "\n" + \
+                       "┃✿┃ fr : french" + "\n" + \
+                       "┃✿┃ fy : frisian" + "\n" + \
+                       "┃✿┃ gl : galician" + "\n" + \
+                       "┃✿┃ ka : georgian" + "\n" + \
+                       "┃✿┃ de : german" + "\n" + \
+                       "┃✿┃ el : greek" + "\n" + \
+                       "┃✿┃ gu : gujarati" + "\n" + \
+                       "┃✿┃ ht : haitian creole" + "\n" + \
+                       "┃✿┃ ha : hausa" + "\n" + \
+                       "┃✿┃ haw : hawaiian" + "\n" + \
+                       "┃✿┃ iw : hebrew" + "\n" + \
+                       "┃✿┃ hi : hindi" + "\n" + \
+                       "┃✿┃ hmn : hmong" + "\n" + \
+                       "┃✿┃ hu : hungarian" + "\n" + \
+                       "┃✿┃ is : icelandic" + "\n" + \
+                       "┃✿┃ ig : igbo" + "\n" + \
+                       "┃✿┃ id : indonesian" + "\n" + \
+                       "┃✿┃ ga : irish" + "\n" + \
+                       "┃✿┃ it : italian" + "\n" + \
+                       "┃✿┃ ja : japanese" + "\n" + \
+                       "┃✿┃ jw : javanese" + "\n" + \
+                       "┃✿┃ kn : kannada" + "\n" + \
+                       "┃✿┃ kk : kazakh" + "\n" + \
+                       "┃✿┃ km : khmer" + "\n" + \
+                       "┃✿┃ ko : korean" + "\n" + \
+                       "┃✿┃ ku : kurdish (kurmanji)" + "\n" + \
+                       "┃✿┃ ky : kyrgyz" + "\n" + \
+                       "┃✿┃ lo : lao" + "\n" + \
+                       "┃✿┃ la : latin" + "\n" + \
+                       "┃✿┃ lv : latvian" + "\n" + \
+                       "┃✿┃ lt : lithuanian" + "\n" + \
+                       "┃✿┃ lb : luxembourgish" + "\n" + \
+                       "┃✿┃ mk : macedonian" + "\n" + \
+                       "┃✿┃ mg : malagasy" + "\n" + \
+                       "┃✿┃ ms : malay" + "\n" + \
+                       "┃✿┃ ml : malayalam" + "\n" + \
+                       "┃✿┃ mt : maltese" + "\n" + \
+                       "┃✿┃ mi : maori" + "\n" + \
+                       "┃✿┃ mr : marathi" + "\n" + \
+                       "┃✿┃ mn : mongolian" + "\n" + \
+                       "┃✿┃ my : myanmar (burmese)" + "\n" + \
+                       "┃✿┃ ne : nepali" + "\n" + \
+                       "┃✿┃ no : norwegian" + "\n" + \
+                       "┃✿┃ ps : pashto" + "\n" + \
+                       "┃✿┃ fa : persian" + "\n" + \
+                       "┃✿┃ pl : polish" + "\n" + \
+                       "┃✿┃ pt : portuguese" + "\n" + \
+                       "┃✿┃ pa : punjabi" + "\n" + \
+                       "┃✿┃ ro : romanian" + "\n" + \
+                       "┃✿┃ ru : russian" + "\n" + \
+                       "┃✿┃ sm : samoan" + "\n" + \
+                       "┃✿┃ gd : scots gaelic" + "\n" + \
+                       "┃✿┃ sr : serbian" + "\n" + \
+                       "┃✿┃ st : sesotho" + "\n" + \
+                       "┃✿┃ sn : shona" + "\n" + \
+                       "┃✿┃ sd : sindhi" + "\n" + \
+                       "┃✿┃ si : sinhala" + "\n" + \
+                       "┃✿┃ sk : slovak" + "\n" + \
+                       "┃✿┃ sl : slovenian" + "\n" + \
+                       "┃✿┃ so : somali" + "\n" + \
+                       "┃✿┃ es : spanish" + "\n" + \
+                       "┃✿┃ su : sundanese" + "\n" + \
+                       "┃✿┃ sw : swahili" + "\n" + \
+                       "┃✿┃ sv : swedish" + "\n" + \
+                       "┃✿┃ tg : tajik" + "\n" + \
+                       "┃✿┃ ta : tamil" + "\n" + \
+                       "┃✿┃ te : telugu" + "\n" + \
+                       "┃✿┃ th : thai" + "\n" + \
+                       "┃✿┃ tr : turkish" + "\n" + \
+                       "┃✿┃ uk : ukrainian" + "\n" + \
+                       "┃✿┃ ur : urdu" + "\n" + \
+                       "┃✿┃ uz : uzbek" + "\n" + \
+                       "┃✿┃ vi : vietnamese" + "\n" + \
+                       "┃✿┃ cy : welsh" + "\n" + \
+                       "┃✿┃ xh : xhosa" + "\n" + \
+                       "┃✿┃ yi : yiddish" + "\n" + \
+                       "┃✿┃ yo : yoruba" + "\n" + \
+                       "┃✿┃ zu : zulu" + "\n" + \
+                       "┃✿┃ fil : Filipino" + "\n" + \
+                       "┃✿┃ he : Hebrew" + "\n" + \
                        "╰━━〔 不要打錯字 〕" + "\n" + "\n\n" + \
 		       "Contoh : " + key + "tr-id Aditmadzs"
 	return menuTranslate
@@ -513,109 +513,109 @@ def clientBot(op):
 								client.sendMessage(to, "自動加入好友已開啟")
 							else:
 								settings["autoAdd"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto add")
+								client.sendMessage(to, "自動加入好友已經開啟囉")
 						elif cmd == "autoadd off":
 							if settings["autoAdd"] == False:
 								client.sendMessage(to, "自動加入好友已關閉")
 							else:
 								settings["autoAdd"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto add")
+								client.sendMessage(to, "自動加入好友已經關閉囉")
 						elif cmd == "autojoin on":
 							if settings["autoJoin"] == True:
 								client.sendMessage(to, "自動加入群組已開啟")
 							else:
 								settings["autoJoin"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto join")
+								client.sendMessage(to, "自動加入群組已經開啟囉")
 						elif cmd == "autojoin off":
 							if settings["autoJoin"] == False:
 								client.sendMessage(to, "自動加入群組已關閉")
 							else:
 								settings["autoJoin"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto join")
+								client.sendMessage(to, "自動加入群組已經關閉囉")
 						elif cmd == "autojointicket on":
 							if settings["autoJoinTicket"] == True:
 								client.sendMessage(to, "自動加入群組已開啟")
 							else:
 								settings["autoJoinTicket"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto join ticket")
+								client.sendMessage(to, "自動加入群組已經開啟囉")
 						elif cmd == "autojointicket off":
 							if settings["autoJoinTicket"] == False:
 								client.sendMessage(to, "自動加入群組已關閉")
 							else:
 								settings["autoJoinTicket"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto join ticket")
+								client.sendMessage(to, "自動加入群組已經關閉囉")
 						elif cmd == "autoread on":
 							if settings["autoRead"] == True:
 								client.sendMessage(to, "自動已讀已開啟")
 							else:
 								settings["autoRead"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto read")
+								client.sendMessage(to, "自動已讀已經開啟囉")
 						elif cmd == "autoread off":
 							if settings["autoRead"] == False:
 								client.sendMessage(to, "自動已讀已關閉")
 							else:
 								settings["autoRead"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto read")
+								client.sendMessage(to, "自動已讀已經關閉囉")
 						elif cmd == "autorespon on":
 							if settings["autoRespon"] == True:
 								client.sendMessage(to, "自動答覆已開啟")
 							else:
 								settings["autoRespon"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan auto respon")
+								client.sendMessage(to, "自動答覆已經開啟囉")
 						elif cmd == "autorespon off":
 							if settings["autoRespon"] == False:
 								client.sendMessage(to, "自動答覆已關閉")
 							else:
 								settings["autoRespon"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan auto respon")
+								client.sendMessage(to, "自動答覆已經關閉囉")
 						elif cmd == "checkcontact on":
 							if settings["checkContact"] == True:
 								client.sendMessage(to, "鑑定好友資料已開啟")
 							else:
 								settings["checkContact"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan check details contact")
+								client.sendMessage(to, "鑑定好友資料已經開啟囉")
 						elif cmd == "checkcontact off":
 							if settings["checkContact"] == False:
 								client.sendMessage(to, "鑑定好友資料已關閉")
 							else:
 								settings["checkContact"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan Check details contact")
+								client.sendMessage(to, "鑑定好友資料已經關閉囉")
 						elif cmd == "checkpost on":
 							if settings["checkPost"] == True:
 								client.sendMessage(to, "鑑定記事本投稿已開啟")
 							else:
 								settings["checkPost"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan check details post")
+								client.sendMessage(to, "鑑定記事本投稿已經開啟囉")
 						elif cmd == "checkpost off":
 							if settings["checkPost"] == False:
 								client.sendMessage(to, "鑑定記事本投稿已關閉")
 							else:
 								settings["checkPost"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan check details post")
+								client.sendMessage(to, "鑑定記事本投稿已經關閉囉")
 						elif cmd == "checksticker on":
 							if settings["checkSticker"] == True:
 								client.sendMessage(to, "鑑定貼圖已開啟")
 							else:
 								settings["checkSticker"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan check details sticker")
+								client.sendMessage(to, "鑑定貼圖已經開啟囉")
 						elif cmd == "checksticker off":
 							if settings["checkSticker"] == False:
 								client.sendMessage(to, "鑑定貼圖已關閉")
 							else:
 								settings["checkSticker"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan check details sticker")
+								client.sendMessage(to, "鑑定貼圖已經關閉囉")
 						elif cmd == "detectunsend on":
 							if settings["detectUnsend"] == True:
 								client.sendMessage(to, "查看收回已開啟")
 							else:
 								settings["detectUnsend"] = True
-								client.sendMessage(to, "Berhasil mengaktifkan detect unsend")
+								client.sendMessage(to, "查看收回已經開啟囉")
 						elif cmd == "detectunsend off":
 							if settings["detectUnsend"] == False:
 								client.sendMessage(to, "查看收回已關閉")
 							else:
 								settings["detectUnsend"] = False
-								client.sendMessage(to, "Berhasil menonaktifkan detect unsend")
+								client.sendMessage(to, "查看收回已經關閉囉")
 						elif cmd.startswith("setautoaddmessage: "):
 							sep = text.split(" ")
 							txt = text.replace(sep[0] + " ","")
