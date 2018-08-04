@@ -22,7 +22,7 @@ $ python Aditmadzs.py
 ## VPS
 
 ```sh
-$ git clone https://github.com/Aditmadzs/Selfbotpy3
+$ git clone https://github.com/Epicboyy/Selfbotpy3
 $ cd Selfbotpy3
 $ python3 -m pip install -r requirements.txt
 $ python3 Aditmadzs.py
