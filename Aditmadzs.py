@@ -56,7 +56,7 @@ def restartBot():
 
 def logError(text):
     client.log("[ ERROR ] {}".format(str(text)))
-    tz = pytz.timezone("Asia/Makassar")
+    tz = pytz.timezone("Asia/Taipei")
     timeNow = datetime.now(tz=tz)
     timeHours = datetime.strftime(timeNow,"(%H:%M)")
     day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
@@ -123,8 +123,8 @@ def menuHelp():
 	else:
 		key = ''
 	menuHelp =   "╭━━━━━━━━━━━━━━━━━━━━━" + "\n" + \
-                "┃🇮🇩┃🇮🇩🇮🇩〔 Aditmadzs 〕🇮🇩🇮🇩" + "\n" + \
-                "┃🇮🇩┃" + "\n" + \
+                "┃🇹🇼┃🌈〔 莫言™ 〕🌈" + "\n" + \
+                "┃🇹🇼┃" + "\n" + \
                 "┃🍁┃━━🍁〔 Help Message 〕🍁━━" + "\n" + \
                 "┃🍁┃━━━🍁〔 Menu 〕🍁━━━" + "\n" + \
 		"┃🍁┃ " + key + "Help\n" + \
@@ -152,7 +152,7 @@ def menuHelp():
                 "┃🔧┃ " + key + "SetAutoAddMessage: 「text」" + "\n" + \
                 "┃🔧┃ " + key + "SetAutoResponMessage: 「text」" + "\n" + \
                 "┃🔧┃ " + key + "SetAutoJoinMessage: 「Text」" + "\n" + \
-		"┃🇮🇩┃━━🇮🇩〔 Self Command 〕🇮🇩━━" + "\n" + \
+		"┃🇮🇩┃━━♥〔 Self Command 〕♥━━" + "\n" + \
                 "┃🇮🇩┃ " + key + "ChangeName: 「Text」" + "\n" + \
                 "┃🇮🇩┃ " + key + "ChangeBio: 「Text」" + "\n" + \
                 "┃🇮🇩┃ " + key + "Me" + "\n" + \
@@ -207,7 +207,7 @@ def menuHelp():
                 "┃📀┃ " + key + "SearchMusic 「Search」" + "\n" + \
                 "┃📀┃ " + key + "SearchLyric 「Search」" + "\n" + \
                 "┃📀┃ " + key + "SearchYoutube 「Search」" + "\n" + \
-		"╰━━━〔 BIG BOS: ©Aditmadzs™  〕"
+		"╰━━━〔 作者: ©莫言♡™  〕"
 	return menuHelp
 
 def menuTextToSpeech():
@@ -385,7 +385,7 @@ def menuTranslate():
                        "┃🇮🇩┃ zu : zulu" + "\n" + \
                        "┃🇮🇩┃ fil : Filipino" + "\n" + \
                        "┃🇮🇩┃ he : Hebrew" + "\n" + \
-                       "╰━━〔 Jangan Typo 〕" + "\n" + "\n\n" + \
+                       "╰━━〔 不要打錯字 〕" + "\n" + "\n\n" + \
 		       "Contoh : " + key + "tr-id Aditmadzs"
 	return menuTranslate
 
@@ -431,50 +431,50 @@ def clientBot(op):
 						to = receiver
 					if msg.contentType == 0:
 						if cmd == "logout":
-							client.sendMessage(to, "Berhasil mematikan selfbot")
+							client.sendMessage(to, "成功關閉selfbot")
 							sys.exit("[ INFO ] BOT SHUTDOWN")
 							return
 						elif cmd == "restart":
-							client.sendMessage(to, "Berhasil mereset bot")
+							client.sendMessage(to, "成功重啟selfbot")
 							restartBot()
 						elif cmd == "speed":
 							start = time.time()
-							client.sendMessage(to, "Menghitung kecepatan...")
+							client.sendMessage(to, "死命測速中...")
 							elapsed_time = time.time() - start
-							client.sendMessage(to, "Kecepatan mengirim pesan {} detik".format(str(elapsed_time)))
+							client.sendMessage(to, "忙碌了 {} 秒(＞﹏＜)".format(str(elapsed_time)))
 						elif cmd == "runtime":
 							timeNow = time.time()
 							runtime = timeNow - clientStart
 							runtime = timeChange(runtime)
-							client.sendMessage(to, "Selfbot telah aktif selama {}".format(str(runtime)))
+							client.sendMessage(to, "運行 {}".format(str(runtime)))
 						elif cmd.startswith("setkey: "):
 							sep = text.split(" ")
 							key = text.replace(sep[0] + " ","")
 							if " " in key:
-								client.sendMessage(to, "Key tidak bisa menggunakan spasi")
+								client.sendMessage(to, "Key不能使用空格")
 							else:
 								settings["keyCommand"] = str(key).lower()
-								client.sendMessage(to, "Berhasil mengubah set key command menjadi : 「{}」".format(str(key).lower()))
+								client.sendMessage(to, "成功將Key更改為 : 「{}」".format(str(key).lower()))
 						elif cmd == "help":
 							helpMessage = menuHelp()
 							contact = client.getContact(sender)
 							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
 							name = contact.displayName
-							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
+							link = "https://pa1.narvii.com/6768/11a5b99f5d99e056b32e6a99d147b5900ebb7d79_hq.gif"
 							client.sendFooter(to, helpMessage, icon, name, link)
 						elif cmd == "texttospeech":
 							helpTextToSpeech = menuTextToSpeech()
 							contact = client.getContact(sender)
 							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
 							name = contact.displayName
-							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
+							link = "https://pa1.narvii.com/6768/11a5b99f5d99e056b32e6a99d147b5900ebb7d79_hq.gif"
 							client.sendFooter(to, helpTextToSpeech, icon, name, link)
 						elif cmd == "translate":
 							helpTranslate = menuTranslate()
 							contact = client.getContact(sender)
 							icon = "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
 							name = contact.displayName
-							link = "https://pa1.narvii.com/6547/d29a5e4bb3405d83fc15cf50ec057f41640618a8_hq.gif"
+							link = "https://pa1.narvii.com/6768/11a5b99f5d99e056b32e6a99d147b5900ebb7d79_hq.gif"
 							client.sendFooter(to, helpTranslate, icon, name, link)
 
 
@@ -510,109 +510,109 @@ def clientBot(op):
 								logError(error)
 						elif cmd == "autoadd on":
 							if settings["autoAdd"] == True:
-								client.sendMessage(to, "Auto add telah aktif")
+								client.sendMessage(to, "自動加入好友已開啟")
 							else:
 								settings["autoAdd"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan auto add")
 						elif cmd == "autoadd off":
 							if settings["autoAdd"] == False:
-								client.sendMessage(to, "Auto add telah nonaktif")
+								client.sendMessage(to, "自動加入好友已關閉")
 							else:
 								settings["autoAdd"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan auto add")
 						elif cmd == "autojoin on":
 							if settings["autoJoin"] == True:
-								client.sendMessage(to, "Auto join telah aktif")
+								client.sendMessage(to, "自動加入群組已開啟")
 							else:
 								settings["autoJoin"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan auto join")
 						elif cmd == "autojoin off":
 							if settings["autoJoin"] == False:
-								client.sendMessage(to, "Auto join telah nonaktif")
+								client.sendMessage(to, "自動加入群組已關閉")
 							else:
 								settings["autoJoin"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan auto join")
 						elif cmd == "autojointicket on":
 							if settings["autoJoinTicket"] == True:
-								client.sendMessage(to, "Auto join ticket telah aktif")
+								client.sendMessage(to, "自動加入群組已開啟")
 							else:
 								settings["autoJoinTicket"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan auto join ticket")
 						elif cmd == "autojointicket off":
 							if settings["autoJoinTicket"] == False:
-								client.sendMessage(to, "Auto join ticket telah nonaktif")
+								client.sendMessage(to, "自動加入群組已關閉")
 							else:
 								settings["autoJoinTicket"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan auto join ticket")
 						elif cmd == "autoread on":
 							if settings["autoRead"] == True:
-								client.sendMessage(to, "Auto read telah aktif")
+								client.sendMessage(to, "自動已讀已開啟")
 							else:
 								settings["autoRead"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan auto read")
 						elif cmd == "autoread off":
 							if settings["autoRead"] == False:
-								client.sendMessage(to, "Auto read telah nonaktif")
+								client.sendMessage(to, "自動已讀已關閉")
 							else:
 								settings["autoRead"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan auto read")
 						elif cmd == "autorespon on":
 							if settings["autoRespon"] == True:
-								client.sendMessage(to, "Auto respon telah aktif")
+								client.sendMessage(to, "自動答覆已開啟")
 							else:
 								settings["autoRespon"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan auto respon")
 						elif cmd == "autorespon off":
 							if settings["autoRespon"] == False:
-								client.sendMessage(to, "Auto respon telah nonaktif")
+								client.sendMessage(to, "自動答覆已關閉")
 							else:
 								settings["autoRespon"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan auto respon")
 						elif cmd == "checkcontact on":
 							if settings["checkContact"] == True:
-								client.sendMessage(to, "Check details contact telah aktif")
+								client.sendMessage(to, "鑑定好友資料已開啟")
 							else:
 								settings["checkContact"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan check details contact")
 						elif cmd == "checkcontact off":
 							if settings["checkContact"] == False:
-								client.sendMessage(to, "Check details contact telah nonaktif")
+								client.sendMessage(to, "鑑定好友資料已關閉")
 							else:
 								settings["checkContact"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan Check details contact")
 						elif cmd == "checkpost on":
 							if settings["checkPost"] == True:
-								client.sendMessage(to, "Check details post telah aktif")
+								client.sendMessage(to, "鑑定記事本投稿已開啟")
 							else:
 								settings["checkPost"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan check details post")
 						elif cmd == "checkpost off":
 							if settings["checkPost"] == False:
-								client.sendMessage(to, "Check details post telah nonaktif")
+								client.sendMessage(to, "鑑定記事本投稿已關閉")
 							else:
 								settings["checkPost"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan check details post")
 						elif cmd == "checksticker on":
 							if settings["checkSticker"] == True:
-								client.sendMessage(to, "Check details sticker telah aktif")
+								client.sendMessage(to, "鑑定貼圖已開啟")
 							else:
 								settings["checkSticker"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan check details sticker")
 						elif cmd == "checksticker off":
 							if settings["checkSticker"] == False:
-								client.sendMessage(to, "Check details sticker telah nonaktif")
+								client.sendMessage(to, "鑑定貼圖已關閉")
 							else:
 								settings["checkSticker"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan check details sticker")
 						elif cmd == "detectunsend on":
 							if settings["detectUnsend"] == True:
-								client.sendMessage(to, "Detect unsend telah aktif")
+								client.sendMessage(to, "查看收回已開啟")
 							else:
 								settings["detectUnsend"] = True
 								client.sendMessage(to, "Berhasil mengaktifkan detect unsend")
 						elif cmd == "detectunsend off":
 							if settings["detectUnsend"] == False:
-								client.sendMessage(to, "Detect unsend telah nonaktif")
+								client.sendMessage(to, "查看收回已關閉")
 							else:
 								settings["detectUnsend"] = False
 								client.sendMessage(to, "Berhasil menonaktifkan detect unsend")
@@ -664,13 +664,13 @@ def clientBot(op):
 						elif cmd == "myprofile":
 							contact = client.getContact(sender)
 							cover = client.getProfileCoverURL(sender)
-							result = "╔══[ Details Profile ]"
-							result += "\n╠ Display Name : @!"
+							result = "╔══[ 個人資料 ]"
+							result += "\n╠ 姓名 : @!"
 							result += "\n╠ Mid : {}".format(contact.mid)
-							result += "\n╠ Status Message : {}".format(contact.statusMessage)
-							result += "\n╠ Picture Profile : http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
-							result += "\n╠ Cover : {}".format(str(cover))
-							result += "\n╚══[ Finish ]"
+							result += "\n╠ 狀態消息 : {}".format(contact.statusMessage)
+							result += "\n╠ 個人頭像 : http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus)
+							result += "\n╠ 封面 : {}".format(str(cover))
+							result += "\n╚══[ 以上個人資料 ]"
 							client.sendImageWithURL(to, "http://dl.profile.line-cdn.net/{}".format(contact.pictureStatus))
 							client.sendMention(to, result, [sender])
 						elif cmd == "mymid":
@@ -688,7 +688,7 @@ def clientBot(op):
 						elif cmd == "myvideoprofile":
 							contact = client.getContact(sender)
 							if contact.videoProfile == None:
-								return client.sendMessage(to, "Anda tidak memiliki video profile")
+								return client.sendMessage(to, "您沒有個人頭像影片")
 							client.sendVideoWithURL(to, "http://dl.profile.line-cdn.net/{}/vp".format(contact.pictureStatus))
 						elif cmd == "mycover":
 							cover = client.getProfileCoverURL(sender)
@@ -1496,12 +1496,12 @@ def clientBot(op):
 							try:
 								sendTime = unsendTime - unsend[sender]["time"]
 								sendTime = timeChange(sendTime)
-								ret_ = "╔══[ Unsend Message ]"
-								ret_ += "\n╠ Sender : @!"
-								ret_ += "\n╠ Time : {} yang lalu".format(sendTime)
-								ret_ += "\n╠ Type : Text"
-								ret_ += "\n╠ Text : {}".format(unsend[sender]["text"])
-								ret_ += "\n╚══[ Finish ]"
+								ret_ = "╔══[ 你以為收回有用嗎?(＞﹏＜) ]"
+								ret_ += "\n╠ 訊息收回者 : @!"
+								ret_ += "\n╠ 時間 : {} 前".format(sendTime)
+								ret_ += "\n╠ 類型 : 文字"
+								ret_ += "\n╠ 收回內容 : {}".format(unsend[sender]["text"])
+								ret_ += "\n╚══[ 我看到囉(´･ω･`) ]"
 								client.sendMention(to, ret_, [contact.mid])
 								del unsend[sender]
 							except:
@@ -1510,12 +1510,12 @@ def clientBot(op):
 							try:
 								sendTime = unsendTime - unsend[sender]["time"]
 								sendTime = timeChange(sendTime)
-								ret_ = "╔══[ Unsend Message ]"
-								ret_ += "\n╠ Sender : @!"
-								ret_ += "\n╠ Time : {} yang lalu".format(sendTime)
-								ret_ += "\n╠ Type : Image"
-								ret_ += "\n╠ Text : None"
-								ret_ += "\n╚══[ Finish ]"
+								ret_ = "╔══[ 你以為收回有用嗎?(＞﹏＜) ]"
+								ret_ += "\n╠ 訊息收回者 : @!"
+								ret_ += "\n╠ 時間 : {} yang lalu".format(sendTime)
+								ret_ += "\n╠ 類型 : 圖片"
+								ret_ += "\n╠ 收回內容 : 有圖有真相"
+								ret_ += "\n╚══[ 我看到囉(´･ω･`) ]"
 								client.sendMention(to, ret_, [contact.mid])
 								client.sendImage(to, unsend[sender]["image"])
 								client.deleteFile(unsend[sender]["image"])
@@ -1524,7 +1524,7 @@ def clientBot(op):
 								client.deleteFile(unsend[sender]["image"])
 								del unsend[sender]
 					else:
-						client.sendMessage(to, "Data unsend tidak ditemukan")
+						client.sendMessage(to, "無法查看收回")
 			except Exception as error:
 				logError(error)
 		backupData()
