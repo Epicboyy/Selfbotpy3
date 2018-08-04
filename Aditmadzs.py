@@ -80,12 +80,12 @@ def timeChange(secs):
 	weeks, days = divmod(days,7)
 	months, weeks = divmod(weeks,4)
 	text = ""
-	if months != 0: text += "%02d Bulan" % (months)
-	if weeks != 0: text += " %02d Minggu" % (weeks)
-	if days != 0: text += " %02d Hari" % (days)
-	if hours !=  0: text +=  " %02d Jam" % (hours)
-	if mins != 0: text += " %02d Menit" % (mins)
-	if secs != 0: text += " %02d Detik" % (secs)
+	if months != 0: text += "%02d 月" % (months)
+	if weeks != 0: text += " %02d 星期" % (weeks)
+	if days != 0: text += " %02d 天" % (days)
+	if hours !=  0: text +=  " %02d 小時" % (hours)
+	if mins != 0: text += " %02d 分" % (mins)
+	if secs != 0: text += " %02d 秒" % (secs)
 	if text[0] == " ":
 		text = text[1:]
 	return text
