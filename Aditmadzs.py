@@ -269,7 +269,7 @@ def menuTextToSpeech():
 				"╠ " + key + "uk : Ukrainian" + "\n" + \
 				"╠ " + key + "vi : Vietnamese" + "\n" + \
 				"╠ " + key + "cy : Welsh" + "\n" + \
-				"╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
+				"╚══[ 不要打錯字 ]" + "\n" + "\n\n" + \
 				"Contoh : " + key + "say-id Aditmadzs"
 	return menuTextToSpeech
 
@@ -480,7 +480,7 @@ def clientBot(op):
 
 						elif cmd == "status":
 							try:
-								ret_ = "╔══[ Status ]"
+								ret_ = "╔══[ 狀態 ]"
 								if settings["autoAdd"] == True: ret_ += "\n╠ Auto Add : ON"
 								else: ret_ += "\n╠ Auto Add : OFF"
 								if settings["autoJoin"] == True: ret_ += "\n╠ Auto Join : ON"
@@ -504,7 +504,7 @@ def clientBot(op):
 								ret_ +="\n╠ Auto Add Message : {}".format(settings["autoAddMessage"])
 								ret_ +="\n╠ Auto Join Message : {}".format(settings["autoJoinMessage"])
 								ret_ +="\n╠ Auto Respon Message : {}".format(settings["autoResponMessage"])
-								ret_ += "\n╚══[ Status ]"
+								ret_ += "\n╚══[ 莫言♡™ ]"
 								client.sendMessage(to, str(ret_))
 							except Exception as error:
 								logError(error)
@@ -1007,7 +1007,7 @@ def clientBot(op):
 									pass
 								read['readPoint'][to] = msg_id
 								read['readMember'][to] = []
-								client.sendMessage(to, "查看已讀已開啟")
+								client.sendMessage(to, "已讀點已設定")
 							else:
 								try:
 									del read['readPoint'][to]
