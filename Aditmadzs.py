@@ -968,8 +968,8 @@ def clientBot(op):
 							txt = text.replace(sep[0] + " ","")
 							groups = client.getGroupIdsJoined()
 							for group in groups:
-								client.sendMessage(group, "[ Broadcast ]\n{}".format(str(txt)))
-							client.sendMessage(to, "Berhasil broadcast ke {} group".format(str(len(groups))))
+								client.sendMessage(group, "[ 群組廣播 ]\n{}".format(str(txt)))
+							client.sendMessage(to, "成功廣播到 {} 個群組".format(str(len(groups))))
 
 
 						elif cmd == 'mentionall':
