@@ -851,7 +851,7 @@ def clientBot(op):
 							txt = text.replace(sep[0] + " ","")
 							contacts = client.getAllContactIds()
 							for contact in contacts:
-								client.sendMessage(contact, "[ Broadcast ]\n{}".format(str(txt)))
+								client.sendMessage(contact, "[ 廣播 ]\n{}".format(str(txt)))
 							client.sendMessage(to, "Berhasil broadcast ke {} teman".format(str(len(contacts))))
 
 
@@ -929,7 +929,7 @@ def clientBot(op):
 								try:
 									groupCreator = group.creator.mid
 								except:
-									groupCreator = "找不到創群者"
+									groupCreator = "不明"
 								if group.invitee is None:
 									groupPending = "0"
 								else:
@@ -978,7 +978,7 @@ def clientBot(op):
 							midSelect = len(midMembers)//100
 							for mentionMembers in range(midSelect+1):
 								no = 0
-								ret_ = "╔══[ 標註 ]"
+								ret_ = "╔══[ Tag ]"
 								dataMid = []
 								for dataMention in group.members[mentionMembers*100 : (mentionMembers+1)*100]:
 									dataMid.append(dataMention.mid)
@@ -998,7 +998,7 @@ def clientBot(op):
 								if hr == day[i]: hasil = hari[i]
 							for k in range(0, len(bulan)):
 								if bln == str(k): bln = bulan[k-1]
-							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
+							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\n時間 : [ " + timeNow.strftime('%H:%M:%S') + " ]"
 							if to in read['readPoint']:
 								try:
 									del read['readPoint'][to]
@@ -1029,7 +1029,7 @@ def clientBot(op):
 								if hr == day[i]: hasil = hari[i]
 							for k in range(0, len(bulan)):
 								if bln == str(k): bln = bulan[k-1]
-							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
+							readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\n時間 : [ " + timeNow.strftime('%H:%M:%S') + " ]"
 							if to not in read['readPoint']:
 								client.sendMessage(to,"查看已讀已關閉")
 							else:
